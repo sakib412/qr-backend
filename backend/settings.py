@@ -17,7 +17,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", default="SECreT_kEy") or "SECreT_kEy"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["qr-attendance-backend.herokuapp.com", "localhost"]
+ALLOWED_HOSTS = ["qr-attendance-backend.herokuapp.com", "localhost","shrouded-shelf-89229.herokuapp.com"]
 
 
 # Application definition
@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_simplejwt',
@@ -35,7 +36,7 @@ INSTALLED_APPS = [
     'attendence',
      # Media Cloudinary
     'cloudinary',
-    'cloudinary_storage',
+    
 ]
 
 MIDDLEWARE = [
@@ -125,7 +126,6 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': "_-UqdDPowULJG2Wr3IWxGEalri4",
 }
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -142,6 +142,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
