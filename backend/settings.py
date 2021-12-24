@@ -2,8 +2,6 @@ from pathlib import Path
 import os
 from datetime import timedelta
 import django_heroku
-import cloudinary
-import cloudinary_storage
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -33,10 +31,6 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     "corsheaders",
     'attendence',
-     # Media Cloudinary
-    'cloudinary_storage',
-    'cloudinary',
-    
 ]
 
 MIDDLEWARE = [
@@ -120,11 +114,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 # Cloudinary stuff
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': "dzu8mxb10",
-    'API_KEY': "675821686816139",
-    'API_SECRET': "_-UqdDPowULJG2Wr3IWxGEalri4",
-}
+# CLOUDINARY_STORAGE = {
+#     'CLOUD_NAME': "dzu8mxb10",
+#     'API_KEY': "675821686816139",
+#     'API_SECRET': "_-UqdDPowULJG2Wr3IWxGEalri4",
+# }
 
 
 
@@ -142,7 +136,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
@@ -164,6 +158,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3001",
     "https://dazzling-fermat-54a67c.netlify.app",
+    "http://sakib412.pythonanywhere.com",
 ]
 
 
